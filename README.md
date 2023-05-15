@@ -35,6 +35,8 @@ You will now begin to implement what you need to for the proof of value, based o
 ## Handy commands
 
 Deploy a manifest:
-`kubectl apply -f <mainifest.yaml>`
+```
+kubectl apply -f <mainifest.yaml>
+```
 
 
