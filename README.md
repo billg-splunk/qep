@@ -32,9 +32,9 @@ To do this:
 ## Your steps
 You will now begin to implement what you need to for the proof of value, based on the customers evaluation. You will need to make changes to add auto-instrumentation and deploy it. And then you will need to edit the code to add more to the instrumentation (new timings, new tags, etc.)
 
-## Handy commands
+## Useful commands
 
-Deploy a manifest:
+* Deploy a manifest:
 ```
 kubectl apply -f <mainifest.yaml>
 ```
