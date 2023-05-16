@@ -17,6 +17,7 @@ This exercise will simulate:
 ## Initial Steps
 To begin the exercise you will need to:
 * Deploy the OTel Collector into Kubernetes
+  * You won't need profiling for this exercise
 * Deploy the application
   * This will include:
     * The starting point of your service, creditcheckservice, uninstrumented
