@@ -7,7 +7,7 @@ SCRIPTPATH=$(dirname "$SCRIPT")
 # Delete the hipster-shop-mine.yaml
 MY_YAML="hipster-shop-mine.yaml"
 MY_YAML_PATH="$SCRIPTPATH/$MY_YAML"
-if [[ -e $MY_YAML_PATH ]] then
+if [[ -e $MY_YAML_PATH ]]; then
   rm "$SCRIPTPATH/$MY_YAML"
   echo "Removed previous $MY_YAML"
 fi

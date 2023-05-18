@@ -46,6 +46,8 @@ spec:
           exec:
             command: ["/bin/grpc_health_probe", "-addr=:8080"]
         env:
+        - name: OTEL_RESOURCE_ATTRIBUTES
+          value: "deployment.environment={{environment}}-fe"
         - name: PORT
           value: "8080"
         - name: PRODUCT_CATALOG_SERVICE_ADDR
@@ -101,6 +103,8 @@ spec:
         ports:
         - containerPort: 3550
         env:
+        - name: OTEL_RESOURCE_ATTRIBUTES
+          value: "deployment.environment={{environment}}-fe"
         - name: PORT
           value: "3550"
         - name: NODE_IP
@@ -344,6 +348,8 @@ spec:
         ports:
         - containerPort: 50051
         env:
+        - name: OTEL_RESOURCE_ATTRIBUTES
+          value: "deployment.environment={{environment}}-fe"
         - name: PORT
           value: "50051"
         - name: NODE_IP
@@ -529,6 +535,8 @@ spec:
         - name: grpc
           containerPort: 7000
         env:
+        - name: OTEL_RESOURCE_ATTRIBUTES
+          value: "deployment.environment={{environment}}-fe"
         - name: PORT
           value: "7000"
         - name: NODE_IP
@@ -592,6 +600,8 @@ spec:
             exec:
               command: ["/bin/grpc_health_probe", "-addr=:5050"]
           env:
+          - name: OTEL_RESOURCE_ATTRIBUTES
+            value: "deployment.environment={{environment}}-fe"
           - name: PORT
             value: "5050"
           - name: PRODUCT_CATALOG_SERVICE_ADDR
