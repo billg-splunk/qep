@@ -25,10 +25,13 @@ To begin the exercise you will need to:
 
 To do this:
 * Deploy the otel collector, as you always would, using helm
-* `cd` into the app directory, and run the `setup.sh` file and set the variables needed
-* Then use `kubectl apply` to deploy the application
-* Check that your application is running
-* Check Splunk Observability to ensure you are getting results in the UI
+* Run `app/setup.sh` and enter the items requested
+  * Environment (i.e. `qep`)
+  * Realm (i.e. `us1`)
+  * rum token (get from your Splunk Observability Cloud org)
+* Then run `kubectl apply -f app/hipster-shop-mine.yaml` to deploy the application
+* Check that your application is running with `kubectl get po`
+* Check Splunk Observability Cloud to ensure you are getting results in the UI
 
 ## Your steps
 You will now begin to implement what you need to for the proof of value, based on the customers evaluation. You will need to make changes to add auto-instrumentation and deploy it. And then you will need to edit the code to add more to the instrumentation (new timings, new tags, etc.)
