@@ -52,7 +52,7 @@ if [[ $helmlist =~ $re ]]; then
   --set clusterName="$ENVIRONMENT" --set splunkObservability.realm="$REALM" \
   --set gateway.enabled="false" \
   -f $MY_OTEL_VALUES_PATH
-  splunk-otel-collector-1684502027 splunk-otel-collector-chart/splunk-otel-collector
+  $HELMRELEASE splunk-otel-collector-chart/splunk-otel-collector
 else
   echo "ERROR: Cannot find helm release to upgrade the otel collector.";
 fi
@@ -74,4 +74,4 @@ sed -i "s/{{realm}}/$REALM/" $MY_HIPSTERSHOP_PATH
 sed -i "s/{{rum_token}}/$RUM_TOKEN/" $MY_HIPSTERSHOP_PATH
 sed -i "s/{{rum_app_name}}/$ENVIRONMENT-app/" $MY_HIPSTERSHOP_PATH
 # Re-deploy app
-kubectl apply -f $MY_HIPSTERSHOP_PATH
+sudo kubectl apply -f $MY_HIPSTERSHOP_PATH
