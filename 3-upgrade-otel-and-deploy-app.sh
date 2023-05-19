@@ -1,10 +1,8 @@
 #!/bin/bash
 
 # This setup script will:
-# (1) Remove demoinabox demos
-# (2) Stop the demoinabox frontend
-# (3) Upgrade the otel collector (for your org)
-# (4) Redeploy the hipster shop app with 2 new services
+# (1) Upgrade the otel collector (for your org)
+# (2) Deploy the hipster shop app
 
 # General variables
 SCRIPT=$(readlink -f "$0")
@@ -20,16 +18,7 @@ read INGEST_TOKEN
 echo Enter rum token:
 read RUM_TOKEN
 
-# (1) Remove demoinabox demos
-sudo kubectl delete -f ~/demo-in-a-box*/hack/yaml/demoinabox-frontend.yaml
-sudo kubectl delete -f ~/demo-in-a-box*/hack/yaml/redis.yaml
-sudo kubectl delete -f ~/demo-in-a-box*/hack/yaml/mysql.yaml
-sudo kubectl delete -f ~/demo-in-a-box*/hack/yaml/demoinabox-backend.yaml
-
-# (2) Stop the demoinabox frontend
-sudo systemctl stop demoinabox.service
-
-# (3) Upgrade the otel collector (for your org)
+# (1) Upgrade the otel collector (for your org)
 OTEL_VALUES_PATH="$SCRIPTPATH/otel/values.yaml"
 MY_OTEL_VALUES_PATH="$SCRIPTPATH/otel/values-mine.yaml"
 # Remove if previous exists
@@ -57,7 +46,7 @@ else
   echo "ERROR: Cannot find helm release to upgrade the otel collector.";
 fi
 
-# (4) Redeploy the hipster shop app with 2 new services
+# (2) Deploy the hipster shop app
 
 # Delete the hipster-shop-mine.yaml
 HIPSTERSHOP_PATH="$SCRIPTPATH/app/hipster-shop.yaml"
@@ -74,4 +63,19 @@ sed -i "s/{{realm}}/$REALM/" $MY_HIPSTERSHOP_PATH
 sed -i "s/{{rum_token}}/$RUM_TOKEN/" $MY_HIPSTERSHOP_PATH
 sed -i "s/{{rum_app_name}}/$ENVIRONMENT-app/" $MY_HIPSTERSHOP_PATH
 # Re-deploy app
-sudo kubectl apply -f $MY_HIPSTERSHOP_PATH
+kubectl apply -f $MY_HIPSTERSHOP_PATH
+echo ""
+echo ""
+echo ""
+echo Unneeded applications removed.
+echo OTel Collector re-pointed.
+echo Base hipster shop deployed.
+echo ""
+echo Check in O11y Cloud if you can find the application
+echo in the right org and in the right environment.
+
+
+echo ""
+echo ""
+echo ""
+echo Upgraded the otel collector for your environment.

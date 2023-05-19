@@ -38,9 +38,22 @@ You will now begin to implement what you need to for the proof of value, based o
 
 ## Useful commands
 
-* Deploy a manifest:
+* Docker: Build the app to an image (from the app source directory)
+```
+docker build -t credit-check-service:latest .
+```
+* Docker: Run the app
+```
+docker run -p 8888:8888 credit-check-service:latest
+# Test it
+curl http://localhost:8888/test
+```
+* Kubernetes/k3s: Save an image, and import into k3s
+```
+docker save --output credit-check-service.tar credit-check-service:latest
+sudo k3s ctr images import credit-check-service.tar
+```
+* Kubernetes: Deploy a manifest:
 ```
 kubectl apply -f <mainifest.yaml>
 ```
-
-
