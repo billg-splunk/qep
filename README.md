@@ -9,51 +9,32 @@ This exercise will simulate:
 ## Pre-requisites
 * You will start with an environment that already has:
   * Kubernetes (k3s)
-  * The application, in the form of a deployment file
-    * You will need to make substitutions for {{variables}} using the setup.sh script
-  * The source of the service you are introducing, creditcheckservice
-  * The new service introduced for this exercise, creditprocessorservice
+  * docker
+  * Hipster Shop (the demo application)
+  * Your service and code (creditcheckservice)
+  * A new service your service relies on (creditprocessorservice)
 
 ## Initial Steps
 To begin the exercise you will need to:
-* Deploy the OTel Collector into Kubernetes
-  * You won't need profiling for this exercise
-* Deploy the application
-  * This will include:
-    * The starting point of your service, creditcheckservice, uninstrumented
-    * The new service introduced for the exercise, creditprocessorservice  
-
-To do this:
-* Deploy the otel collector, as you always would, using helm
-* Run `app/setup.sh` and enter the items requested
-  * Environment (i.e. `qep`)
-  * Realm (i.e. `us1`)
-  * rum token (get from your Splunk Observability Cloud org)
-* Then run `kubectl apply -f app/hipster-shop-mine.yaml` to deploy the application
-* Check that your application is running with `kubectl get po`
-* Check Splunk Observability Cloud to ensure you are getting results in the UI
+* Get an "Observability Portfolio Demo" environment
+* Clone this repo
+* Run the setup scripts in order
+```
+ce qep
+./1-docker-setup.sh
+# Exit and come back to this instance
+./2-remove-diab.sh
+./3-upgrade-otel-and-deploy-app.sh
+# Set the values from your Splunk Observability Cloud org
+./4-deploy-creditcheckservice.sh
+./5-deploy-creditprocessorservice.sh
+```
 
 ## Your steps
-You will now begin to implement what you need to for the proof of value, based on the customers evaluation. You will need to make changes to add auto-instrumentation and deploy it. And then you will need to edit the code to add more to the instrumentation (new timings, new tags, etc.)
+You will now begin to implement what you need to for the proof of value, based on the customers evaluation.
 
-## Useful commands
+You will need to add auto-instrumentation to your service and redeploy it.
 
-* Docker: Build the app to an image (from the app source directory)
-```
-docker build -t credit-check-service:latest .
-```
-* Docker: Run the app
-```
-docker run -p 8888:8888 credit-check-service:latest
-# Test it
-curl http://localhost:8888/test
-```
-* Kubernetes/k3s: Save an image, and import into k3s
-```
-docker save --output credit-check-service.tar credit-check-service:latest
-sudo k3s ctr images import credit-check-service.tar
-```
-* Kubernetes: Deploy a manifest:
-```
-kubectl apply -f <mainifest.yaml>
-```
+Once you have done that you will iterate making changes to configuration, code, etc. to be able to demonstrate your requirements.
+
+There are more than one way to do this exercise. If you can think of multiple ways to achieve something, try to pick the simplest one, but be aware of the options.
