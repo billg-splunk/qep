@@ -64,18 +64,12 @@ sed -i "s/{{rum_token}}/$RUM_TOKEN/" $MY_HIPSTERSHOP_PATH
 sed -i "s/{{rum_app_name}}/$ENVIRONMENT-app/" $MY_HIPSTERSHOP_PATH
 # Re-deploy app
 kubectl apply -f $MY_HIPSTERSHOP_PATH
-echo ""
-echo ""
-echo ""
-echo Unneeded applications removed.
-echo OTel Collector re-pointed.
-echo Base hipster shop deployed.
-echo ""
-echo Check in O11y Cloud if you can find the application
-echo in the right org and in the right environment.
-
 
 echo ""
 echo ""
 echo ""
 echo Upgraded the otel collector for your environment.
+echo Deployed the base hipster shop application.
+echo ""
+echo Check in O11y Cloud if you can find the application
+echo in the right org and in the right environment.
