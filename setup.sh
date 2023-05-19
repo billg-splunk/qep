@@ -51,7 +51,7 @@ if [[ $helmlist =~ $re ]]; then
   --set splunkObservability.accessToken="$INGEST_TOKEN" \
   --set clusterName="$ENVIRONMENT" --set splunkObservability.realm="$REALM" \
   --set gateway.enabled="false" \
-  -f $MY_OTEL_VALUES_PATH
+  -f $MY_OTEL_VALUES_PATH \
   $HELMRELEASE splunk-otel-collector-chart/splunk-otel-collector
 else
   echo "ERROR: Cannot find helm release to upgrade the otel collector.";
