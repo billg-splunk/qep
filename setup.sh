@@ -63,7 +63,7 @@ fi
 HIPSTERSHOP_PATH="$SCRIPTPATH/app/hipster-shop.yaml"
 MY_HIPSTERSHOP_PATH="$SCRIPTPATH/app/hipster-shop-mine.yaml"
 if [[ -e $MY_HIPSTERSHOP_PATH ]]; then
-  rm "$MY_HIPSTERSHOP_PATHY_HI"
+  rm "$MY_HIPSTERSHOP_PATH"
   echo "Removed previous $MY_HIPSTERSHOP_PATH"
 fi
 # Copy template
