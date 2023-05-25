@@ -7,10 +7,10 @@
 #     (Steps 2 and 3 are so we don't need to use a public registry)
 # (4) Deploy the service in kubernetes
 #
-# We will use update-creditcheckservice.sh to update the app.
-# That script will do the first 3 steps of this script. (The
-# last step isn't needed because the manifest is using the latest
-# image.)
+# We will use 9-redeploy.sh to update the app.
+# It adds a step of manually finding and deleting the pod,
+# because unless the kubernetes manifest is changed the pod
+# won't redeploy with the new container image until it restarts.
 
 # (1) Build the credit-check-service app
 docker build -t credit-check-service:latest creditcheckservice
