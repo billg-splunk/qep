@@ -33,9 +33,12 @@ cd qep
 ## Your steps
 You will now begin to implement what you need to for the proof of value, based on the customer requirements you received.
 
-The service that you are working on is **creditcheckservice**. It sits between the **paymentservice** and **creditprocessorservice**.
+The service that you are working on is **creditcheckservice**. It sits between the **paymentservice** and the **creditprocessorservice**.
 
-You will need to add auto-instrumentation to your service and redeploy it.
+You will need to add auto-instrumentation to your service and redeploy it. We've made a simple script for you to use for that process:
+```
+./9-redeploy.sh
+```
 
 Once you have done that you will iterate making changes to configuration, code, etc. to be able to demonstrate your requirements.
 
