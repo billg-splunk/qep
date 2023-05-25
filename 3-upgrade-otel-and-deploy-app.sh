@@ -32,7 +32,7 @@ sed -i "s/{{environment}}/$ENVIRONMENT/" $MY_OTEL_VALUES_PATH
 
 # Get the helm release
 helmlist=$(helm list)
-re=".*(splunk-otel-collector-[0-9]{3,}).*"
+re="(splunk-otel-collector[^[:space:]]+)"
 if [[ $helmlist =~ $re ]]; then
   HELMRELEASE=${BASH_REMATCH[1]};
   # Upgrade otel collector
