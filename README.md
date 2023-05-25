@@ -20,7 +20,7 @@ To begin the exercise you will need to:
 * Clone this repo
 * Run the setup scripts in order
 ```
-ce qep
+cd qep
 ./1-docker-setup.sh
 # Exit and come back to this instance
 ./2-remove-diab.sh
@@ -31,10 +31,16 @@ ce qep
 ```
 
 ## Your steps
-You will now begin to implement what you need to for the proof of value, based on the customers evaluation.
+You will now begin to implement what you need to for the proof of value, based on the customer requirements you received.
+
+The service that you are working on is **creditcheckservice**. It sits between the **paymentservice** and **creditprocessorservice**.
 
 You will need to add auto-instrumentation to your service and redeploy it.
 
 Once you have done that you will iterate making changes to configuration, code, etc. to be able to demonstrate your requirements.
 
 There are more than one way to do this exercise. If you can think of multiple ways to achieve something, try to pick the simplest one, but be aware of the options.
+
+When you wrap up you will record:
+* A 15 minute demo
+* 
