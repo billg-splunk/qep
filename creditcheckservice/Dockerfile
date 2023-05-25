@@ -13,4 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY main.py .
 
 # Set the entrypoint command to run the application
-CMD ["python", "main.py"]
+CMD ["python3", "main.py"]
