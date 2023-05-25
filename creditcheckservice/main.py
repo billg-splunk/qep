@@ -1,4 +1,6 @@
+import logging
 from flask import Flask, request
+from waitress import serve
 
 app = Flask(__name__)
 
@@ -41,4 +43,4 @@ def credit_check_passes(location):
         return False
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8888)
+    serve(app, port=8888)
