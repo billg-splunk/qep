@@ -45,5 +45,5 @@ Once you have done that you will iterate making changes to configuration, code, 
 There are more than one way to do this exercise. If you can think of multiple ways to achieve something, try to pick the simplest one, but be aware of the options.
 
 When you wrap up you will record:
-* A 15 minute demo
-* 
+* A 15 minute demo (tell-show-tell)
+* A 5 minute explanation of the environment changes you made to make this demo happen
