@@ -28,6 +28,8 @@ spec:
           valueFrom:
             fieldRef:
               fieldPath: status.hostIP
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://$(NODE_IP):4317"
         resources:
           requests:
             cpu: 110m
