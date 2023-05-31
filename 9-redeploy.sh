@@ -28,3 +28,6 @@ if [[ $podlist =~ $re ]]; then
   echo "Restarting creditcheckservice pod:"
   kubectl delete po $POD
 fi
+
+echo ""
+echo Redeployed creditcheckservice.

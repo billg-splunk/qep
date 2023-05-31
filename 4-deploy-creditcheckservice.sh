@@ -23,3 +23,12 @@ sudo k3s ctr images import credit-check-service.tar
 
 # (4) Deploy the service in kubernetes
 kubectl apply -f creditcheckservice/creditcheckservice.yaml
+
+echo ""
+echo ""
+echo ""
+echo Deployed the new creditcheckservice.
+echo ""
+echo This is the service you will need to configure/code.
+echo ""
+echo You will use 9-redeploy.sh after making any changes to redeploy the service.

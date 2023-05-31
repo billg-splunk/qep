@@ -11,3 +11,13 @@
 # Splunk Observability Cloud.
 
 kubectl apply -f paymentservice/paymentservice.yaml
+
+echo ""
+echo ""
+echo ""
+echo Deployed the updated paymentservice.
+echo ""
+echo This service will now use your new creditcheckservice.
+echo ""
+echo Read the guides carefully.
+echo It's now time to instrument the creditcheckservice.

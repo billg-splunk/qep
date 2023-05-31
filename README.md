@@ -64,11 +64,12 @@ When you wrap up you will record:
   2023-05-30 14:08:11,566 INFO [waitress] [wasyncore.py:486] [trace_id=0 span_id=0 resource.service.name=creditcheckservice trace_sampled=False] - Serving on http://0.0.0.0:8888
   ```
   * Kubernetes commands shown below are good to know. Some of them have been incorporated in the convenience scripts.
-    * `9-redeploy.sh` performs the following commands:
+    * For example `9-redeploy.sh` performs the following commands:
       * Builds the container image (`docker build`)
       * Exports the image from docker (`docker save`)
       * Imports it into k3s, so we don't need an image repository (`k3s ctr images import`)
         * This command is less common, but useful for testing quickly
+      * Deploys the kubernetes manifest (`kubectl apply -f`), which will apply any changes
       * Deletes the pod, so it pulls down and starts the new one (`kubectl delete pod`)
     * Commands like `kubernetes logs` are useful but not provided in the convenience scripts.
 
@@ -77,7 +78,7 @@ When you wrap up you will record:
   ```
   kubectl get pods
   ```
-  * When you change a pods configuration it should restart automatically
+  * When you change a pod's configuration, it should restart automatically
   * If you only change code, it will not restart automatically
   * To force a pod restarting (which will use the new pod):
   ```
