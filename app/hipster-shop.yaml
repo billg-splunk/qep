@@ -353,7 +353,8 @@ spec:
         - name: SIGNALFX_ENDPOINT_URL
           value: "http://$(NODE_IP):9411/api/v2/spans"
         - name: API_TOKEN_FAILURE_RATE
-          value: "0.90"
+          #value: "0.90"
+          value: "0.0"
         - name: SERIALIZATION_FAILURE_RATE
           value: "0.0"
         - name: SUCCESS_PAYMENT_SERVICE_DURATION_MILLIS
@@ -613,7 +614,7 @@ spec:
           - name: SIGNALFX_ENDPOINT_URL
             value: "http://$(NODE_IP):9411/api/v2/spans"
           - name: MAX_RETRY_ATTEMPTS
-            value: "20"
+            value: "1"
           - name: RETRY_INITIAL_SLEEP_MILLIS
             value: "25"
           resources:
