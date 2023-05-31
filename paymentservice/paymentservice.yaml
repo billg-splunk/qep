@@ -17,7 +17,8 @@ spec:
       containers:
       - name: paymentservice
         #image: quay.io/signalfuse/microservices-demo-paymentservice:a728a64c18
-        image: quay.io/billg/paymentservice:latest
+        #image: quay.io/billg/paymentservice:latest
+        image: ghcr.io/billg-splunk/pays:master
         imagePullPolicy: Always
         ports:
         - containerPort: 50051
@@ -31,7 +32,6 @@ spec:
         - name: SIGNALFX_ENDPOINT_URL
           value: "http://$(NODE_IP):9411/api/v2/spans"
         - name: API_TOKEN_FAILURE_RATE
-          #value: "0.90"
           value: "0.0"
         - name: SERIALIZATION_FAILURE_RATE
           value: "0.0"

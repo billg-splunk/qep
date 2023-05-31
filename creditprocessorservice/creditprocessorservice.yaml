@@ -16,7 +16,8 @@ spec:
       terminationGracePeriodSeconds: 5
       containers:
       - name: creditprocessorservice
-        image: quay.io/billg/creditprocessorservice:latest
+        #image: quay.io/billg/creditprocessorservice:latest
+        image: ghcr.io/billg-splunk/cps:main
         imagePullPolicy: Always
         ports:
         - containerPort: 8899
