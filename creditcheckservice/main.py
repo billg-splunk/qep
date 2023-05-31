@@ -1,4 +1,5 @@
 import logging
+import requests
 from flask import Flask, request
 from waitress import serve
 
@@ -11,36 +12,33 @@ def hello():
 @app.route('/test')
 def test_it():
     return 'OK'
-    
-@app.route('/credit_check_ok')
-def credit_check_ok():
-    location = request.args.get('location')
-    if credit_check_passes(location):
-        return 'YES'
-    else:
-        return 'NO'
 
-@app.route('/get_credit_score')
-def get_credit_score():
-    location = request.args.get('location')
-    credit_score = get_credit_score_by_location(location)
-    return str(credit_score)
+@app.route('/check')
+def credit_check():
+    customerNum = request.args.get('customernum')
+    creditScoreReq = requests.get("http://creditprocessorservice:8899/getScore?customernum=" + customernumber)
+    creditScore = int(creditScoreReq.text)
+    creditScoreCategory = getCreditCategoryFromScore(creditScore)
+    return 'OK'
 
-def get_credit_score_by_location(location):
-    if location == 'USA':
-        return 750
-    elif location == 'Canada':
-        return 800
-    elif location == 'England':
-        return 850
-    elif location == 'France':
-        return 550
-    else:
-        return 700
-
-def credit_check_passes(location):
-    if location == 'France':
-        return False
+def getCreditCategoryFromScore(score):
+    creditScoreCategory = ''
+    match score:
+        case num if num > 850:
+            creditScoreCategory = 'impossible'
+        case num if 800 <= num <= 850 :
+            creditScoreCategory = 'exceptional'
+        case num if 740 <= num < 800 :
+            creditScoreCategory = 'very good'
+        case num if 670 <= num < 740 :
+            creditScoreCategory = 'good'
+        case num if 580 <= num < 670 :
+            creditScoreCategory = 'fair'
+        case num if 300 <= num < 580 :
+            creditScoreCategory = 'poor'
+        case _:
+            creditScoreCategory = 'impossible'
+    return creditScoreCategory
 
 if __name__ == '__main__':
     serve(app, port=8888)
