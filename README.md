@@ -24,12 +24,12 @@ To begin the exercise you will need to:
 ```
 cd qep
 ./1-docker-setup.sh
-# Exit and come back to this instance
 ./2-remove-diab.sh
 ./3-upgrade-otel-and-deploy-app.sh
 # Set the values from your Splunk Observability Cloud org
 ./4-deploy-creditcheckservice.sh
 ./5-deploy-creditprocessorservice.sh
+./6-deploy-updated-paymentservice.sh
 ```
 
 ## Your steps
