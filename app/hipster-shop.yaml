@@ -259,8 +259,6 @@ spec:
               value: '9555'
             - name: OTEL_SERVICE_NAME
               value: adservice
-            #- name: OTEL_RESOURCE_ATTRIBUTES
-            #  value: "deployment.environment={{environment}}-fe"
             - name:  OTEL_PROPAGATORS
               value: "b3multi"
             - name: NODE_IP
