@@ -33,3 +33,5 @@ echo ""
 echo ""
 echo ""
 echo Docker install complete.
+echo
+echo IMPORTANT NOTE: Exit out of this shell and then come back in.
