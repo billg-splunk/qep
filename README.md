@@ -78,9 +78,8 @@ When you wrap up you will record:
   ```
   kubectl get pods
   ```
-  * When you change a pod's configuration, it should restart automatically
-  * If you only change code, it will not restart automatically
-  * To force a pod restarting (which will use the new pod):
+  * Some changes don't always force a restart of pods
+  * To force a pod restarting (which will use the new container image):
   ```
   kubectl get pods
   # Copy Pod Name with <Control-Shift-c>
