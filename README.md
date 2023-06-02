@@ -98,3 +98,7 @@ kubectl logs <Control-Shift-v>
 ```
 RUN <the app>
 ```
+* The `EXEC` command is the last one in your `Dockerfile`. The following line is how to run the command `python3 main.py`:
+```
+CMD ["python3", "main.py"]
+```
