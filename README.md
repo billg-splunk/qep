@@ -9,12 +9,12 @@ This exercise will simulate:
 > :warning: **Important Note**: Read all of these instructions here. There are some important details here, and if you gloss over them you may struggle to get your application instrumented and working.
 
 ## Pre-requisites
-* You will start with an environment that already has:
+You will start with an EC2 environment that already has some useful components, but we will perform some [initial steps](#initial-steps) in order to get to the following state:
   * Kubernetes (k3s)
-  * docker
   * Hipster Shop (the demo application)
-  * Your service and code (creditcheckservice)
-  * A new service your service relies on (creditprocessorservice)
+  * `paymentservice`: Updated service, instrumented
+  * `creditcheckservice`: Your service and code, uninstrumented
+  * `creditprocessorservice`: A new service your service relies on, instrumented
 
 ## Initial Steps
 To begin the exercise you will need to:
@@ -50,7 +50,7 @@ There are more than one way to do this exercise. If you can think of multiple wa
 When you wrap up you will record a max-20 minute demo/review:
 * A 15 minute demo (tell-show-tell)
 * A 5 minute explanation of some of the environment changes you made to make this demo happen
-  * This doesn't need to cover everything; just cover a few things that you thought were interesting in the configuration process.
+  * This doesn't need to cover everything; just cover a few things that you thought were interesting in the configuration process, or any interesting decisions you made.
 
 ## Tips (some very important to know)
 
