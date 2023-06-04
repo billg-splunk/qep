@@ -47,9 +47,10 @@ Once you have done that you will iterate making changes to configuration, code, 
 
 There are more than one way to do this exercise. If you can think of multiple ways to achieve something, try to pick the simplest one, but be aware of the options. And note down any decisions you made.
 
-When you wrap up you will record:
+When you wrap up you will record a max-20 minute demo/review:
 * A 15 minute demo (tell-show-tell)
-* A 5 minute explanation of the environment changes you made to make this demo happen
+* A 5 minute explanation of some of the environment changes you made to make this demo happen
+  * This doesn't need to cover everything; just cover a few things that you thought were interesting in the configuration process.
 
 ## Tips (some very important to know)
 
