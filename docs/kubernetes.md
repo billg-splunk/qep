@@ -22,7 +22,7 @@ You can look at the [script here](../9-redeploy.sh) to see how we are automating
 * Restart the service
   * `kubectl delete pod`: Deletes the pod, so it starts up again using the new configuration and code
 
-[k3s permission error](#k3s-permissions-error)
+:warning: **Important Note**: Are you getting a k3s permission error? If so [read this](#k3s-permissions-error).
 
 ## Other Kubernetes Tips
 
