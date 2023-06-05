@@ -9,9 +9,9 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
 # Prompts
-echo Enter environment:
+echo Enter environment (i.e. qep):
 read ENVIRONMENT
-echo Enter realm:
+echo Enter realm (i.e. us1):
 read REALM
 echo Enter ingest token:
 read INGEST_TOKEN
