@@ -9,13 +9,13 @@ SCRIPT=$(readlink -f "$0")
 SCRIPTPATH=$(dirname "$SCRIPT")
 
 # Prompts
-echo Enter environment (i.e. qep):
+echo 'Enter environment (i.e. qep):'
 read ENVIRONMENT
-echo Enter realm (i.e. us1):
+echo 'Enter realm (i.e. us1):'
 read REALM
-echo Enter ingest token:
+echo 'Enter ingest token:'
 read INGEST_TOKEN
-echo Enter rum token:
+echo 'Enter rum token:'
 read RUM_TOKEN
 
 # (1) Upgrade the otel collector (for your org)
