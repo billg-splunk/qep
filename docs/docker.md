@@ -6,7 +6,7 @@ In the context of this exercise the most important aspect of `docker` you need t
 
 There are a few commands you will want to think about when adding instrumentation to your `Dockerfile`
 
-[Run](https://docs.docker.com/engine/reference/builder/#run): This instructions lets you run something in the process of your build.
+[RUN](https://docs.docker.com/engine/reference/builder/#run): This instructions lets you run something in the process of your build.
 
 [CMD](https://docs.docker.com/engine/reference/builder/#cmd): This instruction (and there is only one, the last one) provides defaults for an executing container. You can interpret:
 ```
