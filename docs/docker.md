@@ -2,7 +2,7 @@
 
 Knowing `docker` is a really useful skill when you are testing out applications and providing samples to customers.
 
-In the context of this exercise the most important aspect of `docker` you need to know is about the [Dockerfile](https://docs.docker.com/engine/reference/builder/). This file is used as a set of instructions to build images. Those images are then used in kubernetes manifests to run the service.
+In the context of this exercise the most important aspect of `docker` you need to know is about the [Dockerfile](https://docs.docker.com/engine/reference/builder/). This file is used as a set of instructions, in order,  to build images. Those images are then used in kubernetes manifests to run the service.
 
 There are a few commands you will want to think about when adding instrumentation to your `Dockerfile`
 
