@@ -22,6 +22,8 @@ You can look at the [script here](../9-redeploy.sh) to see how we are automating
 * Restart the service
   * `kubectl delete pod`: Deletes the pod, so it starts up again using the new configuration and code
 
+[k3s permission error](#k3s-permissions-error)
+
 ## Other Kubernetes Tips
 
 To get your application instrumented you are going to need to setup some environment variables.
@@ -48,4 +50,16 @@ kubectl delete pod <Control-Shift-v>
 kubectl get pods
 # Copy Pod Name with <Control-Shift-c>
 kubectl logs <Control-Shift-v>
+```
+
+## k3s Permissions Error
+
+* If you ever come back to the environment and get an error like:
+```
+WARN[0000]: Unable to read /etc/rancher/k3s/k3s.yaml, please start server with --write-kubeconfig-mode to modify kube config permissions
+```
+you can run the following command:
+```
+# NOTE: Not recommended for production
+sudo chmod +r /etc/rancher/k3s/k3s.yaml
 ```
