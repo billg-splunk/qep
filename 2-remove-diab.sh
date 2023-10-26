@@ -19,15 +19,17 @@ kubectl delete -f ~/demo-in-a-box*/hack/yaml/demoinabox-backend.yaml
 sudo systemctl stop demoinabox.service
 
 # (3) Remove any otel collectors
-helmlist=$(helm list)
-re="(splunk-otel-collector[^[:space:]]+)"
-while [[ $helmlist =~ $re ]]; do
-  HELMRELEASE=${BASH_REMATCH[1]};
-  # Remove otel collector
-  echo "INFO: Removed otel collector $HELMRELEASE"
-  helm uninstall $HELMRELEASE
-  helmlist=$(helm list)
-done
+helm uninstall splunk-otel-collector
+# Before there were multiple, now there should only be one
+#helmlist=$(helm list)
+#re="(splunk-otel-collector[^[:space:]]+)"
+#while [[ $helmlist =~ $re ]]; do
+#  HELMRELEASE=${BASH_REMATCH[1]};
+#  # Remove otel collector
+#  echo "INFO: Removed otel collector $HELMRELEASE"
+#  helm uninstall $HELMRELEASE
+#  helmlist=$(helm list)
+#done
 
 echo ""
 echo ""
