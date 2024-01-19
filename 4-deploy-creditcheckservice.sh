@@ -32,3 +32,8 @@ echo ""
 echo This is the service you will need to configure/code.
 echo ""
 echo You will use 9-redeploy.sh after making any changes to redeploy the service.
+echo ""
+echo Important note, if there were any issues with this deployment you will need
+echo to downgrade docker. See 
+echo - 1b-docker-uninstall.sh
+echo - 1c-docker-reinstall-pinned-version.sh
